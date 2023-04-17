@@ -1,0 +1,34 @@
+<?php
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+?>
+<?php
+/** @var \Aimsinfosoft\Base\Block\Adminhtml\Messages $block */
+$messages = $block->getMessages();
+?>
+<?php if (!empty($messages)): ?>
+    <?php foreach ($messages as $message): ?>
+        <div class="messages aims-unsubscribe">
+            <div class="message message-success success">
+                <div data-ui-id="messages-message-success"><?= /* @noEscape */ $message;?></div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>

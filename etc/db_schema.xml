@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="adminnotification_inbox" resource="default" engine="innodb">
+        <column xsi:type="smallint"
+                name="is_aimsinfosoft"
+                nullable="false"
+                default="0"
+                comment="Is Aimsinfosoft Notification"/>
+        <column xsi:type="datetime"
+                name="expiration_date"
+                nullable="true"
+                comment="Expiration Date"/>
+        <column xsi:type="varchar"
+                name="image_url"
+                nullable="true"
+                comment="Image Url"/>
+    </table>
+</schema>

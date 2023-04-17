@@ -1,0 +1,53 @@
+<?php
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+?>
+<?php
+/** @var \Aimsinfosoft\Base\Block\Adminhtml\System\Config\InformationBlocks\VersionInfo $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<?php if ($block->getCurrentVersion()): ?>
+    <?php $isVersionLast = $block->isLastVersion(); ?>
+    <?php $class = $isVersionLast ? 'last-version' : ''; ?>
+    <div class="aimsinfosoft-module-version">
+        <div>
+            <span class="version-title">
+                <?= $escaper->escapeHtml($block->getConfigModuleName()) ?>
+                <span class="module-version <?= /** @noEscape */ $class ?>">
+                    <?= $escaper->escapeHtml($block->getCurrentVersion()) ?>
+                </span>
+                <?= $escaper->escapeHtml(__(' by ')) ?>
+                <a target="_blank" href="<?= $escaper->escapeUrl($block->getLogoHref()) ?>">
+                    <img alt="aimsinfosoft" class="aimsinfosoft-logo" src="<?= $escaper->escapeHtmlAttr($block->getLogoUrl()) ?>"/>
+                </a>
+            </span>
+        </div>
+        <?php if (!$isVersionLast && !$block->isOriginMarketplace()): ?>
+        <div>
+           <span class="upgrade-error message message-warning">
+                <?= $escaper->escapeHtml(__('Update is available and recommended. See the')) ?>
+                <a target="_blank" href="<?= $escaper->escapeHtmlAttr($block->getChangelogLink()) ?>)">
+                    <?= $escaper->escapeHtml('Change Log') ?>
+                </a>
+            </span>
+        </div>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>

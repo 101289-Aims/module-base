@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\AdminNotification\Block\Grid\Renderer\Actions">
+        <plugin name="Aimsinfosoft_Base::show-unsubscribe-link" type="Aimsinfosoft\Base\Plugin\AdminNotification\Block\Grid\Renderer\Actions"/>
+    </type>
+
+    <type name="Magento\AdminNotification\Block\Grid\Renderer\Notice">
+        <plugin name="Aimsinfosoft_Base::add-Aimsinfosoft-class" type="Aimsinfosoft\Base\Plugin\AdminNotification\Block\Grid\Renderer\Notice"/>
+    </type>
+
+    <type name="Magento\AdminNotification\Block\ToolbarEntry">
+        <plugin name="Aimsinfosoft_Base::add-Aimsinfosoft-class-logo" type="Aimsinfosoft\Base\Plugin\AdminNotification\Block\ToolbarEntry"/>
+    </type>
+
+    <type name="Magento\ImportExport\Controller\Adminhtml\Import\Download">
+        <arguments>
+            <argument name="componentRegistrar" xsi:type="object">Aimsinfosoft\Base\Component\ComponentRegistrar</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Config\Block\System\Config\Form\Field">
+        <plugin name="Aimsinfosoft_Base::replace-image-path" type="Aimsinfosoft\Base\Plugin\Config\Block\System\Config\Form\Field"/>
+    </type>
+
+    <type name="Magento\Backend\Block\Widget\Form\Element\Dependence">
+        <plugin name="Aimsinfosoft_Base::fix-dependence" type="Aimsinfosoft\Base\Plugin\Adminhtml\Block\Widget\Form\Element\Dependence"/>
+    </type>
+
+    <type name="Magento\Backend\Block\Menu">
+        <plugin name="Aimsinfosoft_Base:menu" type="Aimsinfosoft\Base\Plugin\Backend\Block\Menu"/>
+    </type>
+
+    <type name="Magento\Backend\Model\Menu\Item">
+        <plugin name="Aimsinfosoft_Base:correct-market-url" type="Aimsinfosoft\Base\Plugin\Backend\Model\Menu\Item"/>
+    </type>
+
+    <type name="Magento\Backend\Model\Menu\Builder">
+        <plugin name="Aimsinfosoft_Base::menu_builder" type="Aimsinfosoft\Base\Plugin\Backend\Model\Menu\Builder"/>
+    </type>
+
+    <type name="Magento\Config\Model\Config\Structure">
+        <plugin name="Aimsinfosoft_Base:advertise" type="Aimsinfosoft\Base\Plugin\Backend\Model\Config\StructurePlugin"/>
+    </type>
+
+    <type name="Magento\Config\Model\Config\Structure">
+        <plugin name="Aimsinfosoft_Base:infoblock" type="Aimsinfosoft\Base\Plugin\Backend\Model\Config\AddInformationBlockPlugin"/>
+    </type>
+</config>

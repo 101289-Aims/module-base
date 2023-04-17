@@ -1,0 +1,42 @@
+<?php
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+?>
+<?php
+/**
+ * @var \Aimsinfosoft\Base\Block\Import $block
+ */
+?>
+<script>
+    require([
+            'jquery',
+            'Magento_Ui/js/modal/alert',
+            'prototype'
+        ], function($) {
+            //<![CDATA[
+            var entity = $('#entity');
+            entity.hide();
+            entity.closest('fieldset').find('label.label.admin__field-label').css('visibility','hidden');
+            $(entity).val('<?= $block->escapeHtml($block->getImportEntity()) ?>');
+            varienImport.handleEntityTypeSelector();
+            //]]>
+        }
+    );
+</script>

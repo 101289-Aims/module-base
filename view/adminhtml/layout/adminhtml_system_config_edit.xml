@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Aimsinfosoft_Base::css/config.css"/>
+    </head>
+    <body>
+        <referenceContainer name="messages.wrapper">
+            <block class="Aimsinfosoft\Base\Block\Adminhtml\Messages" name="ambase.messages" template="Aimsinfosoft_Base::messages.phtml" after="page.messages"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Aimsinfosoft\Base\Block\Adminhtml\Notification" name="ambase.notification" template="Aimsinfosoft_Base::notification.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

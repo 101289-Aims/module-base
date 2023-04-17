@@ -1,0 +1,139 @@
+<?php
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+?>
+<?php
+/** @var \Aimsinfosoft\Base\Block\Adminhtml\Extensions $block */
+$modules = $block->getModuleList();
+$anchor = $block->isOriginMarketplace() ? '#product.info.details.release_notes' : '#changelog';
+?>
+<div class="aims-updates-block">
+    <h2 class="aims-title">
+        <?= $block->escapeHtml(__('Installed Extensions')) ?>
+    </h2>
+    <div class="aims-updates-container">
+        <?php if (!$block->isOriginMarketplace()): ?>
+        <div class="aims-btns-block">
+            <a href="https://store.aimsinfosoft.com/customer/account/<?= $block->escapeUrl($block->getSeoparams()) ?>"
+               class="aims-btn -orange"
+               target="_blank"
+               title="<?= $block->escapeHtml(__('Get Updates at Your store.aimsinfosoft.com Account')) ?>">
+                <?= $block->escapeHtml(__('Get Updates at Your')) ?>
+                <span class="_strong"><?= $block->escapeHtml(__('store.aimsinfosoft.com')) ?></span>
+                <?= $block->escapeHtml(__('Account')) ?>
+            </a>
+            <a href="https://store.aimsinfosoft.com/index.php/magento2-extensions.html<?= $block->escapeUrl($block->getSeoparams()) ?>"
+               class="aims-btn -blue"
+               target="_blank"
+               title="<?= $block->escapeHtml(__('How to Update?')) ?>">
+                <?= $block->escapeHtml(__('How to Update?')) ?>
+            </a>
+        </div>
+        <?php endif; ?>
+        <div class="aims-modules-block">
+            <?php foreach ($modules['hasUpdate'] as $module): ?>
+            <div class="aims-module-container -update">
+                <div class="aims-title-container">
+                    <?php if (!empty($module['url'])): ?>
+                    <a href="<?= $block->escapeUrl($module['url'] . $block->getSeoparams()) ?>"
+                       class="aims-title -link"
+                       target="_blank"
+                       title="<?= $block->escapeHtml($module['description']) ?>">
+                        <?= $block->escapeHtml($module['description']) ?>
+                    </a>
+                    <?php else: ?>
+                    <h3 class="aims-title">
+                        <?= $block->escapeHtml($module['description']) ?>
+                    </h3>
+                    <?php endif ?>
+                </div>
+                <div class="aims-version-block">
+                    <div class="aims-version-container">
+                        <p class="aims-version">
+                            <?= $block->escapeHtml($module['version']) ?>
+                        </p>
+                        <span class="aims-svg -arrow"></span>
+                        <p class="aims-version">
+                            <?= $block->escapeHtml($module['lastVersion']) ?>
+                        </p>
+                    </div>
+                    <?php if (!empty($module['url'])): ?>
+                    <a href="<?= $block->escapeUrl($module['url'] . $block->getSeoparams() . $anchor) ?>"
+                       class="aims-link"
+                       target="_blank"
+                       title="<?= $block->escapeHtml(__('See what\'s new')) ?>">
+                        <?= $block->escapeHtml(__('See what\'s new')) ?>
+                    </a>
+                    <?php endif ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+<div class="aims-updates-block">
+    <h2 class="aims-title -small">
+        <?= $block->escapeHtml(__('Up-to-Date Aimsinfosoft Extensions')) ?>
+    </h2>
+    <div class="aims-modules-block">
+        <?php foreach ($modules['lastVersion'] as $module): ?>
+            <?php if (!empty($module['url'])): ?>
+            <a href="<?= $block->escapeUrl($module['url'] . $block->getSeoparams()) ?>"
+               class="aims-module-container -link"
+               target="_blank"
+               title="<?= $block->escapeHtml($module['description']) ?>">
+                <span class="aims-title">
+                    <?= $block->escapeHtml($module['description']) ?>
+                </span>
+                <span class="aims-version-block">
+                    <span class="aims-version-container">
+                        <span class="aims-svg"></span>
+                        <span class="aims-version"><?= $block->escapeHtml($module['version']) ?></span>
+                    </span>
+                    <?php if (!empty($module['date'])): ?>
+                    <span class="aims-date"><?= $block->escapeHtml($module['date']) ?></span>
+                    <?php endif; ?>
+                </span>
+            </a>
+            <?php else: ?>
+            <div class="aims-module-container">
+                <div class="aims-title-container">
+                    <h3 class="aims-title">
+                        <?= $block->escapeHtml($module['description']) ?>
+                    </h3>
+                </div>
+                <div class="aims-version-block">
+                    <div class="aims-version-container">
+                        <span class="aims-svg"></span>
+                        <p class="aims-version">
+                            <?= $block->escapeHtml($module['version']) ?>
+                        </p>
+                    </div>
+                    <?php if (!empty($module['date'])): ?>
+                        <p class="aims-date">
+                            <?= $block->escapeHtml($module['date']) ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+</div>

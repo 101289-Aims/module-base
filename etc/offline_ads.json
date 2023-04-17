@@ -1,0 +1,26 @@
+[
+    {
+        "module_code": "*",
+        "tab_name": "Full Page Cache Warmer",
+        "upsell_module_code": "Aimsinfosoft_Fpc",
+        "text_market": "",
+        "text": "Coming soon..",
+        "priority": "1"
+    },
+    {
+        "module_code": "*",
+        "tab_name": "SEO Toolkit",
+        "upsell_module_code": "Aimsinfosoft_SeoToolKit",
+        "text_market": "",
+        "text": "Coming soon..",
+        "priority": "2"
+    },
+    {
+        "module_code": "*",
+        "tab_name": "Google Page Speed Optimizer",
+        "upsell_module_code": "Aimsinfosoft_PageSpeedOptimizer",
+        "text_market": "",
+        "text": "Coming soon..",
+        "priority": "3"
+    }
+]

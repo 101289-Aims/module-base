@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <Aimsinfosoft_base>
+            <notifications>
+                <type>INFO,PROMO,INSTALLED_UPDATE,TIPS_TRICKS</type>
+                <frequency>5</frequency>
+                <ads_enable>1</ads_enable>
+            </notifications>
+            <menu>
+                <enable>1</enable>
+            </menu>
+            <licence_service>
+                <api_url>https://irs.Aimsinfosoft.com</api_url>
+            </licence_service>
+        </Aimsinfosoft_base>
+    </default>
+</config>

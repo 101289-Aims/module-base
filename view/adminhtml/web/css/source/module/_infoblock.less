@@ -1,0 +1,40 @@
+//
+//  aimsinfosoft Base Info-block
+//  _____________________________________________
+
+//
+//  Variables
+//  _____________________________________________
+
+@aims-button__margin: 25px;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .aims-buttons-container {
+        & {
+            display: flex;
+            align-items: center;
+            margin-top: @aims-button__margin;
+        }
+
+        .aims-button {
+            margin-right: @aims-button__margin;
+            padding: 13px 27px;
+            border-radius: 4px;
+            background: linear-gradient(to top right, #000099 23%, #ff3300 68%);
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.25px;
+            font-weight: 600;
+            transition: opacity .3s ease-in-out;
+        }
+
+        .aims-button:hover {
+            opacity: .8;
+        }
+    }
+}

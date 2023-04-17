@@ -1,0 +1,36 @@
+<?php
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+?>
+<?php
+/**
+ * @var \Magento\Backend\Block\Template $block
+ */
+?>
+<script>
+    require([
+        "jquery"
+    ], function($){
+        $(document).ready(function () {
+            $('a[href*="https://store.aimsinfosoft.com/index.php/magento2-extensions.html"], a[href*="https://store.aimsinfosoft.com/index.php/magento2-extensions.html"], a[href*="https://store.aimsinfosoft.com/index.php/magento2-extensions.html"]')
+                .attr('target', '_blank');
+        });
+    });
+</script>

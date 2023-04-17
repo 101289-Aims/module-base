@@ -1,0 +1,96 @@
+/* additional tab in config section*/
+
+.module-version {
+    color: #ea7601;
+}
+
+.aimsinfosoft-info-block .module-version.last-version {
+    color: #008000;
+}
+
+.upgrade-error {
+    display: inline-block;
+}
+
+.aimsinfosoft-conflicts-title,
+.version-title,
+.module-version {
+    letter-spacing: .025em;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+.aimsinfosoft-conflicts-title {
+    margin: 25px 0 10px;
+}
+
+.aimsinfosoft-module-version div:first-child {
+    margin-bottom: 10px;
+}
+
+.aimsinfosoft-info-block span.message {
+    display: inline-block;
+}
+
+.aimsinfosoft-info-block .message.success {
+    background-color: #e9fbdb;
+}
+
+a[id*='aimsinfosoft_information'] {
+    display: none !important;
+}
+
+.aimsinfosoft-module-version .aimsinfosoft-logo {
+    position: relative;
+    bottom: -9px;
+    display: inline-block;
+    max-height: 50px;
+}
+
+tr[id*='aimsinfosoft_not_instaled'] .value {
+    color: #f70606;
+}
+
+tr[id*='aimsinfosoft_is_instaled'] .value {
+    color: #0a820b;
+}
+
+.aims-unsubscribe .message-success:before {
+    display: none;
+}
+
+.aims-unsubscribe img {
+    margin-right: 10px;
+    max-width: 20px;
+}
+
+.aims-unsubscribe .message-success {
+    padding: 1.8rem 4rem 1.8rem 2rem;
+}
+
+.aims-unsubscribe .message-success span {
+    vertical-align: top;
+}
+
+.accordion .config td.value.with-tooltip {
+    font-size: inherit;
+}
+
+.accordion .config .value.with-tooltip div.tooltip {
+    margin-top: 10px;
+}
+
+.accordion .config .value.with-tooltip div.tooltip .tooltip-content {
+    max-width: 400px;
+    width: 400px;
+}
+
+.value.with-tooltip .select,
+.value.with-tooltip .admin__control-table {
+    float: left;
+}
+
+.accordion .form-inline .config .value {
+    padding-right: 4rem;
+}
+

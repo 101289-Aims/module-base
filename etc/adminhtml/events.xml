@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="Aimsinfosoft_base_add_information_content">
+        <observer name="Aimsinfosoft_base_add_information_content" instance="Aimsinfosoft\Base\Observer\GenerateInformationTab"/>
+    </event>
+
+    <event name="controller_action_predispatch">
+        <observer name="Aimsinfosoft_base_admin_notification"
+                  instance="Aimsinfosoft\Base\Observer\PreDispatchAdminActionController" />
+    </event>
+
+    <event name="admin_system_config_save">
+        <observer name="Aimsinfosoft_base_config_save" instance="Aimsinfosoft\Base\Observer\SaveConfig"/>
+    </event>
+</config>

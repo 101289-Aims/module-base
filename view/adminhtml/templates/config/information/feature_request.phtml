@@ -1,0 +1,33 @@
+<?php
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+?>
+<?php
+/** @var \Aimsinfosoft\Base\Block\Adminhtml\System\Config\InformationBlocks\FeatureRequest $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<?php if (!$block->isOriginMarketplace()): ?>
+    <a href="<?= $escaper->escapeUrl($block->getFeatureRequestLink()) ?>"
+       class="aims-button"
+       target="_blank"
+       title="<?= $escaper->escapeHtmlAttr(__("Request New Feature")) ?>">
+        <?= $escaper->escapeHtml(__("Request New Feature")) ?>
+    </a>
+<?php endif; ?>

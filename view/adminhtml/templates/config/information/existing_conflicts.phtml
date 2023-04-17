@@ -1,0 +1,36 @@
+<?php
+/**
+ * Aimsinfosoft
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Aimsinfosoft.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.aimsinfosoft.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Aimsinfosoft
+ * @package     Aimsinfosoft_Base
+ * @copyright   Copyright (c) Aimsinfosoft (https://www.aimsinfosoft.com/)
+ * @license     https://www.aimsinfosoft.com/LICENSE.txt
+ */
+?>
+<?php
+/** @var \Aimsinfosoft\Base\Block\Adminhtml\System\Config\InformationBlocks\ExistingConflicts $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<?php $messages = $block->getConflictsMessages(); ?>
+<?php if (!empty($messages)): ?>
+    <div class="Aimsinfosoft-conflicts-title">
+        <?= $escaper->escapeHtml(__('Problems detected:')) ?>
+    </div>
+    <div class="Aimsinfosoft-disable-extensions">
+        <?php foreach ($messages as $message): ?>
+            <p class="message message-error"><?= $escaper->escapeHtml($message) ?></p>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
